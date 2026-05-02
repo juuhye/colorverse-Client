@@ -13,6 +13,7 @@
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
 - **Deployment:** Vercel
+- **Component Documentation & Testing:** Storybook
 
 ---
 
@@ -24,12 +25,16 @@
   - `Next.js` App Router를 기반으로 한 최적화된 렌더링으로 빠른 페이지 로딩 및 UX 개선
   - `TypeScript`를 활용한 엄격한 타입 안정성을 바탕으로 런타임 에러 방지 및 유지보수성 대폭 향상
 
- - **🎨 디자인 시스템 기반의 UI 구현 및 반응형 레이아웃**
+- **🎨 디자인 시스템 기반의 UI 구현 및 반응형 레이아웃**
   - Figma 디자인의 세밀한 속성(Hug, Fill 등)을 `Tailwind CSS`를 활용해 반응형 웹으로 완벽 구현
-  - `Shadcn/UI`를 활용해 재사용성이 높고 일관된 컴포넌트 기반 아키텍처(Component-driven Architecture) 적용
-
+ 
 - **🧩 재사용 가능한 공통 컴포넌트(Common Component) 및 UI 시스템**
   - 카드, 버튼 등 자주 사용되는 UI 요소를 공통 컴포넌트로 모듈화하여 재사용성 및 확장성 극대화
+
+- **📖 컴포넌트 주도 개발 및 독립적인 UI 테스트 (Component-Driven Development)**
+  - `Storybook`을 도입하여 UI 컴포넌트를 독립된 환경에서 개발하고 시각적으로 검증
+  - 컴포넌트의 다양한 상태와 변형(Variants)을 문서화하여 UI 유지보수 및 협업 효율성 극대화
+
 
 ---
 
