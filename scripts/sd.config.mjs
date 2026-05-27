@@ -162,6 +162,6 @@ export const tokens = ${JSON.stringify(tokenDict, null, 2)} as const
 export type Tokens = typeof tokens
 `;
 
-const tsOutPath = join(root, "tokens.generated.ts");
+const tsOutPath = join(root, "/src/app/shared/tokens/tokens.generated.ts");
 writeFileSync(tsOutPath, ts, "utf-8");
 console.log(`✅ TS Dictionary 빌드 완료: ${tsOutPath}`);
