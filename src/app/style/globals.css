@@ -2,36 +2,36 @@
 @import "./tokens.generated.css";
 
 @theme {
-  --spacing-2xs: 12px;
-  --spacing-xs: 16px;
-  --spacing-sm: 20px;
-  --spacing-md: 24px;
-  --spacing-xl: 32px;
-  --spacing-lg: 28px;
-  --spacing-2xl: 40px;
-  --spacing-3xl: 48px;
+  --spacing-2xs: 1.2rem;
+  --spacing-xs: 1.6rem;
+  --spacing-sm: 2rem;
+  --spacing-md: 2.4rem;
+  --spacing-lg: 2.8rem;
+  --spacing-xl: 3.2rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 4.8rem;
 
   --spacing-0: 0;
-  --spacing-1: 1px;
-  --spacing-2: 2px;
-  --spacing-3: 3px;
-  --spacing-4: 4px;
-  --spacing-6: 6px;
-  --spacing-8: 8px;
-  --spacing-10: 10px;
-  --spacing-12: 12px;
-  --spacing-16: 16px;
-  --spacing-20: 20px;
-  --spacing-24: 24px;
-  --spacing-28: 28px;
-  --spacing-32: 32px;
-  --spacing-40: 40px;
-  --spacing-48: 48px;
-  --spacing-56: 56px;
-  --spacing-64: 64px;
-  --spacing-72: 72px;
-  --spacing-80: 80px;
-  --spacing-96: 96px;
+  --spacing-1: 0.1rem;
+  --spacing-2: 0.2rem;
+  --spacing-3: 0.3rem;
+  --spacing-4: 0.4rem;
+  --spacing-6: 0.6rem;
+  --spacing-8: 0.8rem;
+  --spacing-10: 1rem;
+  --spacing-12: 1.2rem;
+  --spacing-16: 1.6rem;
+  --spacing-20: 2rem;
+  --spacing-24: 2.4rem;
+  --spacing-28: 2.8rem;
+  --spacing-32: 3.2rem;
+  --spacing-40: 4rem;
+  --spacing-48: 4.8rem;
+  --spacing-56: 5.6rem;
+  --spacing-64: 6.4rem;
+  --spacing-72: 7.2rem;
+  --spacing-80: 8rem;
+  --spacing-96: 9.6rem;
 }
 
 @layer base {
