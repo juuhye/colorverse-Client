@@ -43,3 +43,8 @@ next-env.d.ts
 
 *storybook.log
 storybook-static
+
+# color token
+src/app/style/tokens.generated.css
+src/shared/tokens/tokens.generated.ts
+tokens.generated.ts
