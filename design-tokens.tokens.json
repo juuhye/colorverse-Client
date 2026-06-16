@@ -125,6 +125,19 @@
         ]
       }
     },
+    "gradient-brand-active": {
+      "description": "",
+      "type": "custom-gradient",
+      "value": {
+        "gradientType": "linear",
+        "rotation": 151.98869873780606,
+        "stops": [
+          { "position": 0, "color": "#ff72d7ff" },
+          { "position": 0.71, "color": "#49495aff" },
+          { "position": 1, "color": "#373744ff" }
+        ]
+      }
+    },
     "gradient-brand-secondary": {
       "description": "",
       "type": "custom-gradient",
@@ -401,6 +414,18 @@
       "value": "#f9f9fcff",
       "blendMode": "normal"
     },
+    "gray-default": {
+      "description": "",
+      "type": "color",
+      "value": "#2B2C42ff",
+      "blendMode": "normal"
+    },
+    "gray-weaker": {
+      "description": "",
+      "type": "color",
+      "value": "#434460ff",
+      "blendMode": "normal"
+    },
     "basic-gray-10": {
       "description": "",
       "type": "color",
@@ -477,6 +502,12 @@
       "description": "",
       "type": "color",
       "value": "#7747ffff",
+      "blendMode": "normal"
+    },
+    "brand-primary-over": {
+      "description": "",
+      "type": "color",
+      "value": "#6731ffff",
       "blendMode": "normal"
     },
     "brand-secondary": {

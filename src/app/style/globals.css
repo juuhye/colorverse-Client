@@ -38,4 +38,10 @@
   html {
     font-size: 62.5%; /* 1rem = 10px */
   }
+
+  body {
+    font-size: 1.2rem; /* 12px */
+    line-height: 100%;
+    letter-spacing: 0.03em; /* 3% */
+  }
 }
