@@ -5,7 +5,7 @@
  * CSS 변수로 귀속시켜, 유틸리티 클래스 없이 오직 테마 변수로만 제어합니다.
  */
 
-import { readFileSync, writeFileSync } from 'fs'
+import { readFileSync, writeFileSync, mkdirSync } from 'fs'
 import { fileURLToPath } from 'url'
 import { join, dirname } from 'path'
 
@@ -163,5 +163,6 @@ export type Tokens = typeof tokens
 `
 
 const tsOutPath = join(root, '/src/shared/tokens/tokens.generated.ts')
+mkdirSync(dirname(tsOutPath), { recursive: true })
 writeFileSync(tsOutPath, ts, 'utf-8')
 console.log(`✅ TS Dictionary 빌드 완료: ${tsOutPath}`)

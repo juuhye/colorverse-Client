@@ -120,6 +120,7 @@ export const ShapeCircle: Story = {
     shape: 'circle',
     iconPosition: 'only',
     leftIcon: <StarIcon />,
+    'aria-label': '별',
   },
 }
 
@@ -128,6 +129,7 @@ export const WithRightIcon: Story = {
     children: '아이콘 버튼',
     iconPosition: 'right',
     rightIcon: <StarIcon />,
+    'aria-label': '별',
   },
 }
 
@@ -137,6 +139,7 @@ export const WithBothIcons: Story = {
     iconPosition: 'both',
     leftIcon: <StarIcon />,
     rightIcon: <StarIcon />,
+    'aria-label': '별',
   },
 }
 
@@ -145,5 +148,6 @@ export const IconOnly: Story = {
     shape: 'circle',
     iconPosition: 'only',
     leftIcon: <StarIcon />,
+    'aria-label': '별',
   },
 }

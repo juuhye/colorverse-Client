@@ -60,11 +60,13 @@ export const buttonVariants = cva(
       color: 'primary',
       shape: 'pill',
       size: 'sm',
+      iconPosition: 'none',
     },
   }
 )
 
 export const Button = ({
+  type,
   color,
   shape,
   size,
@@ -77,6 +79,7 @@ export const Button = ({
 }: ButtonProps) => {
   return (
     <button
+      type={type ?? 'button'}
       className={cn(
         buttonVariants({
           color,
