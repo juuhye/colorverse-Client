@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { Button } from './Button'
+import PlayIcon from '@/shared/assets/play-icon.svg?react'
 
 const meta: Meta<typeof Button> = {
   title: 'Shared/Button',
@@ -35,15 +36,42 @@ const meta: Meta<typeof Button> = {
 export default meta
 type Story = StoryObj<typeof Button>
 
-const StarIcon = () => (
-  <svg viewBox='0 0 24 24' width='100%' height='100%' fill='currentColor'>
-    <path d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z' />
-  </svg>
+const COLORS = [
+  'primary',
+  'gradientPrimary',
+  'secondary',
+  'tertiary',
+  'ghost',
+] as const
+const SIZES = ['lg', 'md', 'sm'] as const
+
+type MatrixProps = Omit<
+  React.ComponentProps<typeof Button>,
+  'size' | 'color' | 'children'
+> & {
+  children?: React.ReactNode
+}
+
+const Matrix = ({ children, ...props }: MatrixProps) => (
+  <div className='flex flex-col gap-4'>
+    {SIZES.map((size) => (
+      <div key={size} className='flex items-center gap-8'>
+        <span className='w-6 shrink-0 text-xs text-gray-400'>{size}</span>
+        <div className='flex flex-wrap gap-4'>
+          {COLORS.map((color) => (
+            <Button key={color} size={size} color={color} {...props}>
+              {children}
+            </Button>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
 )
 
 export const Default: Story = {
   args: {
-    children: '버튼',
+    children: '레이블',
     color: 'primary',
     shape: 'pill',
     size: 'sm',
@@ -51,103 +79,44 @@ export const Default: Story = {
   },
 }
 
-export const Primary: Story = {
-  args: {
-    children: 'Primary',
-    color: 'primary',
-    iconPosition: 'none',
-  },
+export const Overview: Story = {
+  render: () => <Matrix iconPosition='none'>레이블</Matrix>,
 }
 
-export const GradientPrimary: Story = {
-  args: {
-    children: 'Gradient Primary',
-    color: 'gradientPrimary',
-    iconPosition: 'none',
-  },
+export const LeftIcon: Story = {
+  render: () => (
+    <Matrix iconPosition='both' leftIcon={<PlayIcon />}>
+      레이블
+    </Matrix>
+  ),
 }
 
-export const Secondary: Story = {
-  args: {
-    children: 'Secondary',
-    color: 'secondary',
-    iconPosition: 'none',
-  },
+export const RightIcon: Story = {
+  render: () => (
+    <Matrix iconPosition='right' rightIcon={<PlayIcon />}>
+      레이블
+    </Matrix>
+  ),
 }
 
-export const SizeSm: Story = {
-  args: {
-    children: 'Small (3rem)',
-    size: 'sm',
-    iconPosition: 'none',
-  },
-}
-
-export const SizeMd: Story = {
-  args: {
-    children: 'Medium (3.4rem)',
-    size: 'md',
-    iconPosition: 'none',
-  },
-}
-
-export const SizeLg: Story = {
-  args: {
-    children: 'Large (3.7rem)',
-    size: 'lg',
-    iconPosition: 'none',
-  },
-}
-
-export const ShapePill: Story = {
-  args: {
-    children: 'Pill',
-    shape: 'pill',
-    iconPosition: 'none',
-  },
-}
-
-export const ShapeRounded: Story = {
-  args: {
-    children: 'Rounded',
-    shape: 'rounded',
-    iconPosition: 'none',
-  },
-}
-
-export const ShapeCircle: Story = {
-  args: {
-    shape: 'circle',
-    iconPosition: 'only',
-    leftIcon: <StarIcon />,
-    'aria-label': '별',
-  },
-}
-
-export const WithRightIcon: Story = {
-  args: {
-    children: '아이콘 버튼',
-    iconPosition: 'right',
-    rightIcon: <StarIcon />,
-    'aria-label': '별',
-  },
-}
-
-export const WithBothIcons: Story = {
-  args: {
-    children: '양쪽 아이콘',
-    iconPosition: 'both',
-    leftIcon: <StarIcon />,
-    rightIcon: <StarIcon />,
-    'aria-label': '별',
-  },
+export const BothIcons: Story = {
+  render: () => (
+    <Matrix
+      iconPosition='both'
+      leftIcon={<PlayIcon />}
+      rightIcon={<PlayIcon />}>
+      레이블
+    </Matrix>
+  ),
 }
 
 export const IconOnly: Story = {
-  args: {
-    shape: 'circle',
-    iconPosition: 'only',
-    leftIcon: <StarIcon />,
-    'aria-label': '별',
-  },
+  render: () => (
+    <Matrix
+      shape='circle'
+      iconPosition='only'
+      leftIcon={<PlayIcon />}
+      aria-label='별'
+    />
+  ),
 }
