@@ -1,7 +1,13 @@
-@import "tailwindcss";
-@import "./tokens.generated.css";
+@import 'tailwindcss';
+@import './tokens.generated.css';
 
 @theme {
+  --font-sans: var(--font-noto-sans);
+  --text-xs: 1.2rem;
+  --text-sm: 1.4rem;
+  --text-base: 1.6rem;
+  --text-lg: 2rem;
+
   --spacing-2xs: 1.2rem;
   --spacing-xs: 1.6rem;
   --spacing-sm: 2rem;
@@ -32,10 +38,26 @@
   --spacing-72: 7.2rem;
   --spacing-80: 8rem;
   --spacing-96: 9.6rem;
+
+  --radius-0: 0;
+  --radius-2: 2px;
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-24: 24px;
 }
 
 @layer base {
   html {
     font-size: 62.5%; /* 1rem = 10px */
+  }
+
+  body {
+    font-size: 1.2rem; /* 12px */
+    line-height: 100%;
+    letter-spacing: 0.03em; /* 3% */
   }
 }

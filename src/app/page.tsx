@@ -1,9 +1,5 @@
-import { Button } from "./shared/ui/Button";
+import { Button } from '@/shared/ui/button'
 
 export default function Home() {
-  return (
-    <>
-      <Button label="Button" primary />
-    </>
-  );
+  return <></>
 }

@@ -20,7 +20,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "types": ["vite-plugin-svgr/client"]
   },
   "include": [
     "next-env.d.ts",
