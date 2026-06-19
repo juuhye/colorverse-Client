@@ -106,7 +106,7 @@ export const Button = ({
       {leftIcon && (
         <span
           aria-hidden='true'
-          className='flex size-[1.8rem] shrink-0 items-center justify-center'>
+          className='flex shrink-0 items-center justify-center'>
           {leftIcon}
         </span>
       )}
@@ -114,7 +114,7 @@ export const Button = ({
       {rightIcon && (
         <span
           aria-hidden='true'
-          className='flex size-[1.8rem] shrink-0 items-center justify-center'>
+          className='flex shrink-0 items-center justify-center'>
           {rightIcon}
         </span>
       )}

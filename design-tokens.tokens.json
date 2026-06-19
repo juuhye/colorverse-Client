@@ -540,6 +540,12 @@
       "value": "#ffedeeff",
       "blendMode": "normal"
     },
+    "button-toggle-primary-filled": {
+      "description": "",
+      "type": "color",
+      "value": "#dde6f5ff",
+      "blendMode": "normal"
+    },
     "button-popup-outlined": {
       "description": "",
       "type": "color",
