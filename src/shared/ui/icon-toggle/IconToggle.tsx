@@ -56,7 +56,7 @@ export const IconToggle = ({
   // on/off 기능 추가
   const [isOn, setIsOn] = useControllableState({
     prop: pressed,
-    defaultProp: defaultPressed,
+    defaultProp: defaultPressed ?? false,
     onChange: onPressedChange,
   })
 
