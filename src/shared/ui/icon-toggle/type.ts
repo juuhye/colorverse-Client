@@ -5,6 +5,7 @@ import type { iconToggleVariants } from './IconToggle'
 type IconToggleProps = React.ComponentProps<'button'> &
   VariantProps<typeof iconToggleVariants> & {
     icon: React.ReactNode
+    'aria-label': string
   }
 
 export type { IconToggleProps }
