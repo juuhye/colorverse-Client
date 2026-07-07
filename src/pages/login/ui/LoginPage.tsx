@@ -20,7 +20,9 @@ export function LoginPage() {
         <div className='flex flex-col items-center gap-40'>
           <div className='flex flex-col items-center gap-20'>
             {/* 로고 */}
-            <Logo variant='main' />
+            <h5>
+              <Logo variant='main' />
+            </h5>
             <p className='text-md text-basic-gray-50'>
               아직 컬러버스 회원이 아니라면 앱에서 계정을 생성하세요!
             </p>
