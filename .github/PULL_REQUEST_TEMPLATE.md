@@ -1,15 +1,4 @@
----
-name: "[title] / body"
-about: Describe this issue template's purpose here.
-title: ''
-labels: ''
-assignees: ''
-
----
-
 ##  작업 개요
-
-> feat(IN-361): 채널 맞춤형 대시보드 예외처리 및 소수점 표시 수정
 
 ##  작업 유형
 
