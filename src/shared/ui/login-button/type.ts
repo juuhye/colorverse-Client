@@ -4,4 +4,5 @@ export interface LoginButtonProps {
   icon?: ReactNode
   label?: string
   className?: string
+  onClick?: () => void
 }

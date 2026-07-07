@@ -3,6 +3,8 @@ import type { VariantProps } from 'class-variance-authority'
 import type { searchBarVariants } from './SearchBar'
 
 type SearchBarProps = React.ComponentProps<'input'> &
-  VariantProps<typeof searchBarVariants> & {}
+  VariantProps<typeof searchBarVariants> & {
+    leftIcon?: React.ReactNode
+  }
 
 export type { SearchBarProps }
