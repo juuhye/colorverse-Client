@@ -5,7 +5,7 @@ export function LoginButton({ icon, label, className }: LoginButtonProps) {
   return (
     <button
       className={cn(
-        'relative flex h-[5.2rem] w-full items-center justify-center rounded-full border border-gray-300 bg-white px-20 text-base font-medium',
+        'relative flex h-[5.2rem] w-full cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-white px-20 text-base font-medium',
         className
       )}>
       {icon && (
