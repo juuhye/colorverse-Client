@@ -29,10 +29,11 @@ export const buttonVariants = cva(
         sm: 'h-[3rem]',
         md: 'h-[3.4rem]',
         lg: 'h-[3.7rem]',
+        xl: 'h-[6rem]',
       },
       // icon 위치 및 유무 스타일 정의 (padding)
       iconPosition: {
-        none: 'px-[5rem]',
+        none: 'justify-center px-[5rem]',
         left: 'pr-20 pl-2xs',
         right: 'pr-2xs pl-20',
         both: 'pr-2xs pl-xs',
