@@ -12,6 +12,9 @@
 - **Framework:** Next.js (App Router / Pages Router)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
+- **Server State:** TanStack Query
+- **Client State:** Zustand
+- **Backend & DB:** Supabase
 - **Deployment:** Vercel
 - **Component Documentation & Testing:** Storybook
 
@@ -34,6 +37,13 @@
 - **📖 컴포넌트 주도 개발 및 독립적인 UI 테스트 (Component-Driven Development)**
   - `Storybook`을 도입하여 UI 컴포넌트를 독립된 환경에서 개발하고 시각적으로 검증
   - 컴포넌트의 다양한 상태와 변형(Variants)을 문서화하여 UI 유지보수 및 협업 효율성 극대화
+
+- **🔄 서버/클라이언트 상태 분리를 통한 명확한 데이터 흐름**
+  - `TanStack Query`로 서버 상태(API 데이터)를 관리하여 캐싱, 리페칭, 로딩/에러 상태를 선언적으로 처리
+  - `Zustand`로 클라이언트 상태(UI/세션 상태 등)를 관리하여 불필요한 리렌더링 없이 가볍게 전역 상태 공유
+
+- **🔐 Supabase 기반 인증 및 백엔드 연동**
+  - `Supabase`를 BaaS로 활용하여 인증 및 데이터베이스 기능을 빠르게 구축
 
 
 ---
