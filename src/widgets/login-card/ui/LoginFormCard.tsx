@@ -1,3 +1,5 @@
+'use client'
+
 import { Button } from '@/shared/ui/button'
 import { Input } from '@/shared/ui/input/Input'
 import IdIcon from '@/shared/assets/id-icon.svg'
