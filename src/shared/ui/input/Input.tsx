@@ -1,13 +1,17 @@
 import { cn } from '@/shared/lib/utils'
 import { InputProps } from './type'
 
-export const Input = ({ icon, className, type = 'text', ...props }: InputProps) => {
+export const Input = ({
+  icon,
+  className,
+  type = 'text',
+  ...props
+}: InputProps) => {
   return (
     <div className='relative w-full'>
       <input
-        role='input-text'
         className={cn(
-          'w-full rounded-full border border-gray-200 p-lg py-xs text-sm font-medium text-gray-900 placeholder:text-gray-200 focus:ring-brand-primary focus:ring-offset-2',
+          'w-full rounded-full border border-gray-200 p-lg py-xs text-sm font-medium text-gray-900 placeholder:text-gray-200 focus:ring focus:ring-brand-primary focus:ring-offset-2',
           icon && 'pl-[5.4rem]',
           className
         )}
