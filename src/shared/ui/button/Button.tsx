@@ -1,5 +1,5 @@
 import { cva } from 'class-variance-authority'
-import { cn } from '@/shared/lib/utils'
+import { cn } from '@/shared/lib/utils/cn'
 import { ButtonProps } from './type'
 
 export const buttonVariants = cva(

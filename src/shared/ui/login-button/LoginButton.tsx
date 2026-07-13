@@ -1,4 +1,4 @@
-import { cn } from '@/shared/lib/utils'
+import { cn } from '@/shared/lib/utils/cn'
 import { LoginButtonProps } from './type'
 
 export function LoginButton({

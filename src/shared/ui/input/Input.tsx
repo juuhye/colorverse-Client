@@ -1,4 +1,4 @@
-import { cn } from '@/shared/lib/utils'
+import { cn } from '@/shared/lib/utils/cn'
 import { InputProps } from './type'
 
 export const Input = ({

@@ -1,5 +1,5 @@
 import { cva } from 'class-variance-authority'
-import { cn } from '@/shared/lib/utils'
+import { cn } from '@/shared/lib/utils/cn'
 import { SearchBarProps } from './type'
 
 export const searchBarVariants = cva(
