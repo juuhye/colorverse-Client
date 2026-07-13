@@ -11,17 +11,17 @@ import PwIcon from '@/shared/assets/pw-icon.svg'
 
 export function LoginFormCard() {
   const router = useRouter()
-
   const { mutate, error, isPending } = useLogin()
   const [id, setId] = useState('')
   const [password, setPassword] = useState('')
 
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    mutate({ id, password }, { onSuccess: () => router.push('/') })
+  }
+
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault()
-        mutate({ id, password }, { onSuccess: () => router.push('/') })
-      }}>
+    <form onSubmit={handleSubmit}>
       <div
         className={cn(
           'flex w-[53.5rem] flex-col rounded-28 bg-white p-[10rem] py-[7rem] shadow-[0_18px_30px_rgba(119,71,255,0.1)]',
@@ -45,7 +45,7 @@ export function LoginFormCard() {
             onChange={(e) => setPassword(e.target.value)}
           />
           {error && (
-            <p className='px-md text-sm text-brand-secondary'>
+            <p role='alert' className='px-md text-sm text-brand-secondary'>
               아이디 또는 비밀번호를 잘못 입력했습니다.
               <br />
               입력하신 내용을 다시 확인해 주세요.

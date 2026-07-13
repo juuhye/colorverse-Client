@@ -9,7 +9,11 @@ export function useAuthInit() {
 
   useEffect(() => {
     const init = async () => {
-      const { data } = await supabase.auth.getSession()
+      const { data, error } = await supabase.auth.getSession()
+      if (error) {
+        console.log(error)
+        return
+      }
       const user = data.session?.user
       setUser(user ? { id: user.id, email: user.email! } : null)
     }
