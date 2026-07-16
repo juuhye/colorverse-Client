@@ -28,7 +28,7 @@ export function LoginCard() {
         <LoginButton
           label='내부 테스트용 로그인'
           icon={<ColorverseIcon />}
-          onClick={() => router.push('/login-form')}
+          onClick={() => router.push('/login/form')}
         />
       </div>
     </div>
