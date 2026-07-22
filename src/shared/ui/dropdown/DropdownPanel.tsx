@@ -5,7 +5,7 @@ import { ReactElement } from 'react'
 interface DropdownPanelProps {
   offsetY?: number
   offsetX?: 'left' | 'center' | 'right'
-  showArrow: boolean
+  showArrow?: boolean
   arrow?: 'left' | 'center' | 'right'
   className?: string
   children?: ReactElement
@@ -26,7 +26,7 @@ const OFFSETX_CLASS: Record<'left' | 'center' | 'right', string> = {
 export function DropdownPanel({
   offsetY = 8,
   offsetX = 'center',
-  showArrow,
+  showArrow = true,
   arrow = 'center',
   className,
   children,

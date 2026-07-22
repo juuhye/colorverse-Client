@@ -1,16 +1,44 @@
 'use client'
 
-import { cn } from '@/shared/lib/utils/cn'
 import { useState } from 'react'
 import { Button } from '@/shared/ui/button'
 import { DropdownPanel } from '@/shared/ui/dropdown/DropdownPanel'
-import { BUILDER_OPTION } from '../model/builderOptions'
+import { BUILDER_OPTION, BuilderOption } from '../model/builderOptions'
 import { useDropdown } from '@/shared/lib/hooks/useDropdown'
 import ArrowIcon from '../assets/arrow-icon.svg'
+
+const OPTION_BUTTON_CLASS =
+  'relative flex h-[2.4rem] w-full items-center rounded-6 pr-[3rem] pl-sm hover:bg-brand-primary'
+
+function BuilderOptionButton({
+  option,
+  onSelect,
+}: {
+  option: BuilderOption
+  onSelect: (option: BuilderOption) => void
+}) {
+  return (
+    <button
+      type='button'
+      className={OPTION_BUTTON_CLASS}
+      onClick={() => onSelect(option)}>
+      <div className='flex items-center gap-[0.9rem] text-white'>
+        {option.icon}
+        <span className='text-xs whitespace-nowrap'>{option.label}</span>
+      </div>
+      <ArrowIcon className='absolute right-8 -rotate-90 text-white' />
+    </button>
+  )
+}
 
 export function BuilderMenu() {
   const [selected, setSelected] = useState(BUILDER_OPTION[0])
   const { isOpen, close, toggle, ref } = useDropdown<HTMLDivElement>()
+
+  const handleSelect = (option: BuilderOption) => {
+    setSelected(option)
+    close()
+  }
 
   return (
     <div className='relative' ref={ref}>
@@ -26,32 +54,11 @@ export function BuilderMenu() {
         {selected.label}
       </Button>
       {isOpen && (
-        <DropdownPanel
-          showArrow={true}
-          arrow='center'
-          offsetY={15}
-          className='p-[0.5rem]'>
+        <DropdownPanel arrow='center' offsetY={15} className='p-[0.5rem]'>
           <ul id='builder-options' className='flex flex-col gap-[0.5rem]'>
             {BUILDER_OPTION.map((option) => (
               <li key={option.label}>
-                <button
-                  type='button'
-                  className={cn(
-                    'relative flex h-[2.4rem] w-full items-center rounded-6 pr-[3rem] pl-sm',
-                    'hover:bg-brand-primary'
-                  )}
-                  onClick={() => {
-                    setSelected(option)
-                    close()
-                  }}>
-                  <div className='flex items-center gap-[0.9rem] text-white'>
-                    {option.icon}
-                    <span className='text-xs whitespace-nowrap'>
-                      {option.label}
-                    </span>
-                  </div>
-                  <ArrowIcon className='absolute right-8 -rotate-90 text-white' />
-                </button>
+                <BuilderOptionButton option={option} onSelect={handleSelect} />
               </li>
             ))}
           </ul>
