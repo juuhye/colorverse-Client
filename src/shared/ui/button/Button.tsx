@@ -3,7 +3,7 @@ import { cn } from '@/shared/lib/utils/cn'
 import { ButtonProps } from './type'
 
 export const buttonVariants = cva(
-  'flex cursor-pointer items-center gap-8 text-sm text-white',
+  'flex cursor-pointer items-center gap-8 text-sm font-semibold text-white',
   {
     variants: {
       // 버튼 컬러 타입 정의
