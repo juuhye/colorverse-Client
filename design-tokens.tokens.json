@@ -519,7 +519,7 @@
     "brand-tertiary": {
       "description": "",
       "type": "color",
-      "value": "#ffffffff",
+      "value": "#111111ff",
       "blendMode": "normal"
     },
     "button-filled-over": {
