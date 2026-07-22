@@ -20,6 +20,8 @@ export function BuilderMenu() {
         rightIcon={<ArrowIcon />}
         iconPosition='both'
         className='text-xs'
+        aria-expanded={isOpen}
+        aria-controls='builder-options'
         onClick={toggle}>
         {selected.label}
       </Button>
@@ -29,25 +31,27 @@ export function BuilderMenu() {
           arrow='center'
           offsetY={15}
           className='p-[0.5rem]'>
-          <ul className='flex flex-col gap-[0.5rem]'>
+          <ul id='builder-options' className='flex flex-col gap-[0.5rem]'>
             {BUILDER_OPTION.map((option) => (
-              <li
-                key={option.label}
-                className={cn(
-                  'relative flex h-[2.4rem] cursor-pointer items-center rounded-6 pr-[3rem] pl-sm',
-                  'hover:bg-brand-primary'
-                )}
-                onClick={() => {
-                  setSelected(option)
-                  close()
-                }}>
-                <div className='flex items-center gap-[0.9rem] text-white'>
-                  {option.icon}
-                  <span className='text-xs whitespace-nowrap'>
-                    {option.label}
-                  </span>
-                </div>
-                <ArrowIcon className='absolute right-8 -rotate-90 text-white' />
+              <li key={option.label}>
+                <button
+                  type='button'
+                  className={cn(
+                    'relative flex h-[2.4rem] w-full items-center rounded-6 pr-[3rem] pl-sm',
+                    'hover:bg-brand-primary'
+                  )}
+                  onClick={() => {
+                    setSelected(option)
+                    close()
+                  }}>
+                  <div className='flex items-center gap-[0.9rem] text-white'>
+                    {option.icon}
+                    <span className='text-xs whitespace-nowrap'>
+                      {option.label}
+                    </span>
+                  </div>
+                  <ArrowIcon className='absolute right-8 -rotate-90 text-white' />
+                </button>
               </li>
             ))}
           </ul>

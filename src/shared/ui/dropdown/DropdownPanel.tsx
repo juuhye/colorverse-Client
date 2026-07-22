@@ -19,8 +19,8 @@ const ARROW_CLASS: Record<'left' | 'center' | 'right', string> = {
 
 const OFFSETX_CLASS: Record<'left' | 'center' | 'right', string> = {
   center: 'left-1/2 -translate-x-1/2',
-  left: '0',
-  right: '0',
+  left: 'left-0',
+  right: 'right-0',
 }
 
 export function DropdownPanel({

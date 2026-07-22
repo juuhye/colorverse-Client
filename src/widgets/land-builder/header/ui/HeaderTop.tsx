@@ -14,7 +14,6 @@ export function HeaderTop() {
         </p>
       </div>
       <BuilderMenu />
-      <div>{/* TODO: utils / setting 메뉴 추가 예정 */}</div>
     </div>
   )
 }
