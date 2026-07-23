@@ -66,7 +66,7 @@ export const buttonVariants = cva(
       },
       {
         color: 'icon',
-        class: 'text-[#8083A3] hover:text-white active:text-white',
+        class: 'text-[#8083A3] hover:text-[#AAADCC] active:text-white',
       },
     ],
 

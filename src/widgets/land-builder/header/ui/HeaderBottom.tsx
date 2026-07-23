@@ -1,4 +1,9 @@
+import { ShortcutKeyMenu } from '@/features/land-builder'
+
 export function HeaderBottom() {
-  // TODO: 추후 랜드 빌더 헤더 하단의 필터나 탭 메뉴가 추가될 자리입니다.
-  return <div className='w-full'></div>
+  return (
+    <div className='w-full bg-background-secondary-builder px-sm py-[0.7rem]'>
+      <ShortcutKeyMenu />
+    </div>
+  )
 }

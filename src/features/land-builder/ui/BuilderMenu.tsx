@@ -8,7 +8,7 @@ import { useDropdown } from '@/shared/lib/hooks/useDropdown'
 import ArrowIcon from '../assets/arrow-icon.svg'
 
 const OPTION_BUTTON_CLASS =
-  'relative flex h-[2.4rem] w-full items-center rounded-6 pr-[3rem] pl-sm hover:bg-brand-primary'
+  'relative flex h-[2.4rem] w-full items-center rounded-6 pr-[3rem] pl-sm hover:bg-brand-primary cursor-pointer'
 
 function BuilderOptionButton({
   option,
