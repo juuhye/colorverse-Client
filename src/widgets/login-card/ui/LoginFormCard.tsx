@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { cn } from '@/shared/lib/utils/cn'
 import { useRouter } from 'next/navigation'
-import { useLogin } from '@/features/login/model/useLogin'
+import { useLogin } from '@/features/auth'
 import { Button } from '@/shared/ui/button'
 import { Input } from '@/shared/ui/input/Input'
 import IdIcon from '@/shared/assets/id-icon.svg'

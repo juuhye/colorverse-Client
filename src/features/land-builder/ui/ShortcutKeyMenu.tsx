@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation'
 import { Button } from '@/shared/ui/button'
 import { DropdownPanel } from '@/shared/ui/dropdown/DropdownPanel'
 import { useDropdown } from '@/shared/lib/hooks/useDropdown'
-import { useLogout } from '@/features/login/model/useLogout'
+import { useLogout } from '@/features/auth'
 
 import HamburgerIcon from '../assets/hamburger-Icon.svg'
 import TextLogo from '@/shared/assets/text-logo.svg'
@@ -17,7 +17,7 @@ const OPTION_BUTTON_CLASS =
 
 export function ShortcutKeyMenu() {
   const router = useRouter()
-  const { mutate: logout } = useLogout()
+  const { mutate: logout, isPending } = useLogout()
   const { isOpen, close, toggle, ref } = useDropdown<HTMLDivElement>()
   return (
     <div className='relative' ref={ref}>
@@ -46,20 +46,28 @@ export function ShortcutKeyMenu() {
                 shape='circle'
                 size='sm'
                 leftIcon={<LogoutIcon />}
+                disabled={isPending}
                 onClick={() =>
-                  logout(undefined, { onSuccess: () => router.push('/login') })
+                  logout(undefined, {
+                    onSuccess: () => {
+                      router.push('/login')
+                      router.refresh()
+                    },
+                  })
                 }
               />
             </div>
             {/* 하단 단축키 영역 */}
-            <ul className='p-10 pb-sm'>
+            <ul id='shortkey-options' className='p-10 pb-sm'>
               {SHORTCUTKEY_OPTIONS.map((option) => (
-                <li
-                  key={option.label}
-                  className={OPTION_BUTTON_CLASS}
-                  onClick={() => close()}>
-                  <span>{option.label}</span>
-                  <span>{option.shortcut}</span>
+                <li key={option.label}>
+                  <button
+                    type='button'
+                    className={OPTION_BUTTON_CLASS}
+                    onClick={() => close()}>
+                    <span>{option.label}</span>
+                    <span>{option.shortcut}</span>
+                  </button>
                 </li>
               ))}
             </ul>
