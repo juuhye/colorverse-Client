@@ -11,7 +11,12 @@ export const Logo = ({ variant = 'main', className }: LogoProps) => {
   return (
     <>
       {variant === 'main' ? (
-        <MainLogo className={cn('text-black', className)} />
+        <MainLogo
+          className={cn(
+            'aspect-[178/43] h-[4.3rem] w-auto text-black',
+            className
+          )}
+        />
       ) : (
         <ShortLogo className={cn('text-black', className)} />
       )}

@@ -1,19 +1,26 @@
-import { BuilderMenu } from '@/features/land-builder/ui/BuilderMenu'
 import { Logo } from '@/shared/ui/logo'
+import { BuilderMenu } from '@/features/land-builder'
+import { HeaderUtils } from './HeaderUtils'
+import { HeaderProfile } from './HeaderProfile'
 
 export function HeaderTop() {
   return (
-    <div className='flex w-full items-center justify-between bg-background-primary-builder p-sm py-4'>
+    <div className='relative flex w-full items-center justify-between bg-background-primary-builder p-sm py-4'>
       {/* logo + intro */}
       <div className='flex items-center gap-md'>
         <h1>
-          <Logo className='text-white' />
+          <Logo className='aspect-[178/43] h-[2.329rem] w-auto text-white' />
         </h1>
-        <p className='text-xs font-medium text-white opacity-60'>
-          안녕하세요. {'천억부자'}님의 랜드 빌더 입니다.
-        </p>
+        <HeaderProfile />
       </div>
-      <BuilderMenu />
+
+      {/* BuilderMenu - Dropdown menu */}
+      <div className='absolute left-1/2 -translate-x-1/2'>
+        <BuilderMenu />
+      </div>
+
+      {/* 단축키 / 이용 가이드 + 설정 버튼 */}
+      <HeaderUtils />
     </div>
   )
 }
