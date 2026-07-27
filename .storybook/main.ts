@@ -17,7 +17,7 @@ const config: StorybookConfig = {
     "../public"
   ],
   viteFinal: async (config) => {
-    config.plugins = [...(config.plugins ?? []), svgr()];
+    config.plugins = [...(config.plugins ?? []), svgr({ svgrOptions: { icon: true } })];
     return config;
   },
 };

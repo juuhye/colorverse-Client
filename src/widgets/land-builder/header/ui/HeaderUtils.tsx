@@ -10,7 +10,7 @@ export function HeaderUtils() {
         {UTIL_ITEMS.map((item) => (
           <li
             key={item}
-            className='relative px-14 py-[0.9rem] text-white/60 after:absolute after:top-1/2 after:right-0 after:h-12 after:w-1 after:-translate-y-1/2 after:bg-white/60 last:after:hidden hover:text-white'>
+            className='relative px-14 py-[0.9rem] text-button-secondary-outlined after:absolute after:top-1/2 after:right-0 after:h-12 after:w-1 after:-translate-y-1/2 after:bg-button-secondary-outlined last:after:hidden hover:text-white'>
             {item}
           </li>
         ))}
@@ -20,7 +20,7 @@ export function HeaderUtils() {
         iconPosition='only'
         shape='circle'
         size='sm'
-        leftIcon={<SettingIcon />}
+        leftIcon={<SettingIcon className='size-xs' />}
       />
     </div>
   )

@@ -9,7 +9,10 @@ export interface BuilderOption {
 }
 
 export const BUILDER_OPTION: BuilderOption[] = [
-  { label: '랜드 빌더', icon: <LandIcon /> },
-  { label: '아이템 빌더', icon: <ItemIcon /> },
-  { label: '에셋 빌더', icon: <AssetsIcon /> },
+  { label: '랜드 빌더', icon: <LandIcon className='size-xs' /> },
+  {
+    label: '아이템 빌더',
+    icon: <ItemIcon className='size-xs' />,
+  },
+  { label: '에셋 빌더', icon: <AssetsIcon className='size-xs' /> },
 ]

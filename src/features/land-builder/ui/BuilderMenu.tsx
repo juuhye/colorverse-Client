@@ -26,7 +26,7 @@ function BuilderOptionButton({
         {option.icon}
         <span className='text-xs whitespace-nowrap'>{option.label}</span>
       </div>
-      <ArrowIcon className='absolute right-8 -rotate-90 text-white' />
+      <ArrowIcon className='absolute right-8 h-8 w-6 -rotate-90 text-white' />
     </button>
   )
 }
@@ -45,7 +45,7 @@ export function BuilderMenu() {
       <Button
         color='secondary'
         leftIcon={selected.icon}
-        rightIcon={<ArrowIcon />}
+        rightIcon={<ArrowIcon className='h-6 w-[0.9rem]' />}
         iconPosition='both'
         className='text-xs'
         aria-expanded={isOpen}
