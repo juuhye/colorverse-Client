@@ -21,18 +21,18 @@ export interface CanvasToolOption {
 }
 
 export const CANVAS_TOOL_OPTION: CanvasToolOption[] = [
-  { id: 'cursor', label: 'Cursor', icon: <CursorIcon className='size-14' /> },
-  { id: 'hand', label: 'Hand', icon: <HandIcon className='h-sm w-18' /> },
-  { id: 'reset', label: 'Reset', icon: <ResetIcon className='size-sm' /> },
+  { id: 'cursor', label: '클릭', icon: <CursorIcon className='size-14' /> },
+  { id: 'hand', label: '잡기', icon: <HandIcon className='h-sm w-18' /> },
+  { id: 'reset', label: '초기화', icon: <ResetIcon className='size-sm' /> },
   {
     id: 'fullscreen',
-    label: 'Fullscreen',
+    label: '화면 채움',
     icon: <FullscreenIcon className='size-sm' />,
   },
-  { id: 'scale', label: 'Scale', icon: <ScaleIcon className='size-xs' /> },
+  { id: 'scale', label: '크기 조정', icon: <ScaleIcon className='size-xs' /> },
   {
     id: 'local',
-    label: 'Local',
+    label: '위치 조정',
     icon: <LocalIcon className='size-18' />,
   },
 ]

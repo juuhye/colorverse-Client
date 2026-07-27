@@ -2,13 +2,13 @@
 
 import { Button } from '@/shared/ui/button'
 import { IconToggle, IconToggleGroup } from '@/shared/ui/icon-toggle'
-import { CANVAS_TOOL_OPTION } from '../model/canvasToolOptions'
+import { CANVAS_TOOL_OPTION, CanvasToolId } from '../model/canvasToolOptions'
 import ArrowIcon from '../assets/arrow-icon.svg'
 import MarkIcon from '../assets/mark-icon.svg'
 import { useState } from 'react'
 
 export function CanvasToolbar() {
-  const [selectedTool, setSelectedTool] = useState<string[]>([])
+  const [selectedTool, setSelectedTool] = useState<CanvasToolId[]>([])
 
   return (
     <div className='flex items-center gap-18'>
@@ -19,6 +19,7 @@ export function CanvasToolbar() {
           shape='circle'
           size='md'
           aria-label='Undo'
+          disabled
           leftIcon={<ArrowIcon className='h-6 w-10 rotate-90' />}
           className='w-[3.4rem] border border-basic-gray-60 text-basic-gray-60'
         />
@@ -28,6 +29,7 @@ export function CanvasToolbar() {
           shape='circle'
           size='md'
           aria-label='Redo'
+          disabled
           leftIcon={<ArrowIcon className='h-6 w-10 -rotate-90' />}
           className='w-[3.4rem] border border-basic-gray-60 text-basic-gray-60'
         />
@@ -36,12 +38,12 @@ export function CanvasToolbar() {
         type='single'
         className='gap-[2.5rem]'
         value={selectedTool}
-        onValueChange={setSelectedTool}>
+        onValueChange={(value) => setSelectedTool(value as CanvasToolId[])}>
         {CANVAS_TOOL_OPTION.map((tool) => (
           <div key={tool.id} className='relative'>
             <IconToggle
               value={tool.id}
-              aria-label={tool.label}
+              aria-label={`${tool.label}`}
               icon={tool.icon}
               size='md'
             />

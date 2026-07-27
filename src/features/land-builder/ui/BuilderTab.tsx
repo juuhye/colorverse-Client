@@ -14,6 +14,8 @@ export function BuilderTab() {
           key={tab}
           className='relative after:absolute after:top-1/2 after:right-0 after:h-12 after:w-1 after:-translate-y-1/2 after:bg-button-secondary-outlined after:content-[""] last:after:hidden'>
           <button
+            type='button'
+            aria-pressed={activeTab === tab}
             onClick={() => setActiveTab(tab)}
             className={cn(
               'relative px-sm py-10 text-sm font-semibold',

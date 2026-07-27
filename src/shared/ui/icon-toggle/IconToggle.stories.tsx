@@ -10,7 +10,7 @@ const meta: Meta<typeof IconToggle> = {
   argTypes: {
     size: {
       control: 'select',
-      options: ['sm', 'md', 'lg'],
+      options: ['xs', 'sm', 'md', 'lg'],
     },
     pressed: {
       control: 'boolean',
@@ -24,7 +24,7 @@ const meta: Meta<typeof IconToggle> = {
 export default meta
 type Story = StoryObj<typeof IconToggle>
 
-const SIZES = ['lg', 'md', 'sm'] as const
+const SIZES = ['lg', 'md', 'sm', 'xs'] as const
 
 const Matrix = () => (
   <div className='flex flex-col gap-4'>

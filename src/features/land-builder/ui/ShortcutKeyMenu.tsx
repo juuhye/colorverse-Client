@@ -45,7 +45,7 @@ export function ShortcutKeyMenu() {
                 iconPosition='only'
                 shape='circle'
                 size='sm'
-                leftIcon={<LogoutIcon />}
+                leftIcon={<LogoutIcon className='size-14' />}
                 disabled={isPending}
                 onClick={() =>
                   logout(undefined, {

@@ -82,7 +82,9 @@ export const IconToggleGroup = ({
   }
 
   return (
-    <div className={cn('flex items-center', className)} role='group'>
+    <div
+      className={cn('flex items-center', className)}
+      role={type === 'single' ? 'radiogroup' : 'group'}>
       <IconToggleGroupContext.Provider
         value={{ type, value: currentValue, onItemToggle }}>
         {children}
@@ -111,7 +113,7 @@ export const IconToggle = ({
     onChange: onPressedChange,
   })
 
-  const isPressed = group ? group.value.includes(value ?? '') : isOn
+  const isPressed = group ? value !== undefined && group.value.includes(value) : isOn
 
   return (
     <button
@@ -123,14 +125,18 @@ export const IconToggle = ({
       )}
       onClick={(e) => {
         if (group) {
-          group.onItemToggle(value ?? '')
+          if (value !== undefined) {
+            group.onItemToggle(value)
+          }
         } else {
           setIsOn(!isOn)
         }
         onClick?.(e) // 부모 onClick도 호출
       }}
       data-state={isPressed ? 'on' : 'off'}
-      aria-pressed={isPressed}
+      role={group?.type === 'single' ? 'radio' : undefined}
+      aria-checked={group?.type === 'single' ? isPressed : undefined}
+      aria-pressed={group?.type === 'single' ? undefined : isPressed}
       {...props}>
       <span
         aria-hidden='true'
