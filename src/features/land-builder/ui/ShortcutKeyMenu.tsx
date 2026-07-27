@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation'
 import { Button } from '@/shared/ui/button'
 import { DropdownPanel } from '@/shared/ui/dropdown/DropdownPanel'
 import { useDropdown } from '@/shared/lib/hooks/useDropdown'
-import { useLogout } from '@/features/auth'
+import { useLogout } from '@/entities/auth'
 
 import HamburgerIcon from '../assets/hamburger-Icon.svg'
 import TextLogo from '@/shared/assets/text-logo.svg'
@@ -26,7 +26,7 @@ export function ShortcutKeyMenu() {
         iconPosition='only'
         shape='circle'
         size='md'
-        leftIcon={<HamburgerIcon />}
+        leftIcon={<HamburgerIcon className='h-xs w-sm' />}
         aria-expanded={isOpen}
         aria-controls='shortkey-options'
         onClick={toggle}
@@ -37,7 +37,7 @@ export function ShortcutKeyMenu() {
             {/* 상단 로그아웃 영역 */}
             <div className='flex justify-between border-b-1 border-[#FFFFFF1A] py-10 pr-14 pl-sm'>
               <div className='flex items-center gap-4 font-medium text-white'>
-                <TextLogo />
+                <TextLogo className='h-[1.3rem] w-[7.7rem]' />
                 빌더 홈
               </div>
               <Button

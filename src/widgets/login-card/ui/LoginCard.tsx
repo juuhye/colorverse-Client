@@ -13,11 +13,17 @@ export function LoginCard() {
   return (
     <div className='flex w-[53.5rem] flex-col gap-[4rem] rounded-28 bg-white p-[10rem] py-[4rem] shadow-[0_18px_30px_rgba(119,71,255,0.1)]'>
       <div className='flex flex-col gap-2xs'>
-        <LoginButton label='Google로 로그인' icon={<GoogleIcon />} />
-        <LoginButton label='Apple로 로그인' icon={<AppleIcon />} />
+        <LoginButton
+          label='Google로 로그인'
+          icon={<GoogleIcon className='size-20' />}
+        />
+        <LoginButton
+          label='Apple로 로그인'
+          icon={<AppleIcon className='h-[2.2rem] w-[1.7rem]' />}
+        />
         <LoginButton
           label='카카오 로그인'
-          icon={<KakaoIcon />}
+          icon={<KakaoIcon className='h-[1.9rem] w-[2.1rem]' />}
           className='border-0 bg-[#FEE500]'
         />
       </div>
@@ -27,7 +33,7 @@ export function LoginCard() {
         </span>
         <LoginButton
           label='내부 테스트용 로그인'
-          icon={<ColorverseIcon />}
+          icon={<ColorverseIcon className='h-[2.6rem] w-16' />}
           onClick={() => router.push('/login/form')}
         />
       </div>

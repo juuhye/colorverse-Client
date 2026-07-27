@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { cn } from '@/shared/lib/utils/cn'
 import { useRouter } from 'next/navigation'
-import { useLogin } from '@/features/auth'
+import { useLogin } from '@/entities/auth'
 import { Button } from '@/shared/ui/button'
 import { Input } from '@/shared/ui/input/Input'
 import IdIcon from '@/shared/assets/id-icon.svg'
@@ -32,7 +32,7 @@ export function LoginFormCard() {
           <Input
             aria-label='아이디'
             placeholder='아이디를 입력해 주세요'
-            icon={<IdIcon />}
+            icon={<IdIcon className='h-18 w-xs' />}
             value={id}
             onChange={(e) => setId(e.target.value)}
           />
@@ -40,7 +40,7 @@ export function LoginFormCard() {
             type='password'
             aria-label='비밀번호'
             placeholder='비밀번호를 입력해 주세요'
-            icon={<PwIcon />}
+            icon={<PwIcon className='h-18 w-xs' />}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />

@@ -13,7 +13,6 @@ export function useLogout() {
     },
     onSuccess: () => {
       setUser(null)
-      // 인증된 사용자에 종속된 쿼리는 queryKey를 ['user', ...]로 시작해서 여기서 함께 제거되도록 한다
       queryClient.removeQueries({ queryKey: ['user'] })
     },
   })

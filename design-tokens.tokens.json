@@ -597,13 +597,13 @@
     "icon-primary-filled-pressed": {
       "description": "",
       "type": "color",
-      "value": "#ece5ffff",
+      "value": "#ffffffff",
       "blendMode": "normal"
     },
     "icon-primary-outlined": {
       "description": "",
       "type": "color",
-      "value": "#414141ff",
+      "value": "#8083A3ff",
       "blendMode": "normal"
     },
     "icon-secondary-filled": {
