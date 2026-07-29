@@ -15,7 +15,7 @@ import { SHORTCUTKEY_OPTIONS } from '../model/shortcutKeyOptions'
 const OPTION_BUTTON_CLASS =
   'cursor-pointer text-[#FFFFFF99] relative flex justify-between h-[2.4rem] w-full items-center rounded-4 p-10 py-4 font-medium hover:bg-brand-primary hover:text-white'
 
-export function ShortcutKeyMenu() {
+export function BuilderHamburgerMenu() {
   const router = useRouter()
   const { mutate: logout, isPending } = useLogout()
   const { isOpen, close, toggle, ref } = useDropdown<HTMLDivElement>()
