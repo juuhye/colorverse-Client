@@ -9,6 +9,7 @@ export function Switch({
   defaultChecked,
   onCheckedChange,
   onClick,
+  className,
   ...props
 }: SwitchProps) {
   const [isChecked, setIsChecked] = useControllableState({
@@ -19,6 +20,7 @@ export function Switch({
 
   return (
     <button
+      {...props}
       type='button'
       role='switch'
       aria-checked={isChecked}
@@ -34,9 +36,9 @@ export function Switch({
         // size
         'h-14 w-[3rem]',
         // color
-        'data-checked:bg-brand-primary data-unchecked:bg-gray-500'
-      )}
-      {...props}>
+        'data-checked:bg-brand-primary data-unchecked:bg-gray-500',
+        className
+      )}>
       <span
         data-slot='switch-thumb'
         className={cn(

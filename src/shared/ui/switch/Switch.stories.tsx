@@ -12,15 +12,16 @@ type Story = StoryObj<typeof Switch>
 
 export const Default: Story = {
   args: {
-    'data-checked': true,
+    'aria-label': '토글',
+    defaultChecked: true,
   },
 }
 
 export const Overview: Story = {
   render: () => (
     <div className='flex items-center gap-8'>
-      <Switch data-unchecked />
-      <Switch data-checked />
+      <Switch aria-label='토글' defaultChecked={false} />
+      <Switch aria-label='토글' defaultChecked={true} />
     </div>
   ),
 }

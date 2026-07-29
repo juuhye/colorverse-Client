@@ -13,13 +13,21 @@ export function BuilderSwitch() {
         <span className='text-xs text-[#FFFFFF99]'>
           Snap {isSnapOn ? 'On' : 'Off'}
         </span>
-        <Switch checked={isSnapOn} onCheckedChange={setIsSnapOn} />
+        <Switch
+          aria-label='Snap'
+          checked={isSnapOn}
+          onCheckedChange={setIsSnapOn}
+        />
       </div>
       <div className='flex items-center gap-5'>
         <span className='text-xs text-[#FFFFFF99]'>
           Grid {isGridOn ? 'On' : 'Off'}
         </span>
-        <Switch checked={isGridOn} onCheckedChange={setIsGridOn} />
+        <Switch
+          aria-label='Grid'
+          checked={isGridOn}
+          onCheckedChange={setIsGridOn}
+        />
       </div>
     </div>
   )

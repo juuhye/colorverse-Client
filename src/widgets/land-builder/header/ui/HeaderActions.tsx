@@ -25,6 +25,7 @@ export function HeaderActions() {
         color='gradientPrimary'
         iconPosition='only'
         leftIcon={<AssetIcon className='size-[1.6rem]' />}
+        aria-label='에셋'
         className='p-8'
       />
     </div>
