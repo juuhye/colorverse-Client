@@ -1,4 +1,5 @@
 export { BuilderMenu } from './ui/BuilderMenu'
-export { ShortcutKeyMenu } from './ui/ShortcutKeyMenu'
+export { BuilderHamburgerMenu } from './ui/BuilderHamburgerMenu'
 export { BuilderTab } from './ui/BuilderTab'
 export { CanvasToolbar } from './ui/CanvasToolbar'
+export { BuilderSwitch } from './ui/BuilderSwitch'
