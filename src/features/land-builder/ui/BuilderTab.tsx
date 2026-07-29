@@ -18,7 +18,7 @@ export function BuilderTab() {
             aria-pressed={activeTab === tab}
             onClick={() => setActiveTab(tab)}
             className={cn(
-              'relative px-sm py-10 text-sm font-semibold',
+              'relative cursor-pointer px-sm py-10 text-sm font-semibold',
               activeTab === tab
                 ? 'text-white'
                 : 'text-button-secondary-outlined'

@@ -10,7 +10,7 @@ export function HeaderUtils() {
         {UTIL_ITEMS.map((item) => (
           <li
             key={item}
-            className='relative px-14 py-[0.9rem] text-button-secondary-outlined after:absolute after:top-1/2 after:right-0 after:h-12 after:w-1 after:-translate-y-1/2 after:bg-button-secondary-outlined last:after:hidden hover:text-white'>
+            className='relative cursor-pointer px-14 py-[0.9rem] text-button-secondary-outlined after:absolute after:top-1/2 after:right-0 after:h-12 after:w-1 after:-translate-y-1/2 after:bg-button-secondary-outlined last:after:hidden hover:text-white'>
             {item}
           </li>
         ))}
