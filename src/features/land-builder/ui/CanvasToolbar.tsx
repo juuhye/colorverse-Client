@@ -8,7 +8,7 @@ import MarkIcon from '../assets/mark-icon.svg'
 import { useState } from 'react'
 
 export function CanvasToolbar() {
-  const [selectedTool, setSelectedTool] = useState<CanvasToolId[]>([])
+  const [selectedTool, setSelectedTool] = useState<CanvasToolId[]>(['cursor'])
 
   return (
     <div className='flex items-center gap-18'>

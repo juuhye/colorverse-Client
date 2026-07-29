@@ -32,7 +32,7 @@ export function Switch({
         onClick?.(e) // 부모 onClick도 호출
       }}
       className={cn(
-        'peer group/switch relative inline-flex shrink-0 items-center rounded-full transition-all outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2',
+        'peer group/switch relative inline-flex shrink-0 cursor-pointer items-center rounded-full transition-all outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2',
         // size
         'h-14 w-[3rem]',
         // color
