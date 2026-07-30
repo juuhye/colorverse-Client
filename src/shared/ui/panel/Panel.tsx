@@ -5,7 +5,7 @@ import { Button } from '../button'
 import { Resizable } from 're-resizable'
 import { useControllableState } from '@/shared/lib/hooks/useControllableState'
 import { PanelProps, PanelSide } from './type'
-import TriggerIcon from '@/shared/assets/trigger-icon.svg'
+import TriggerIcon from '@/shared/assets/trigger-icon.svg?react'
 
 const WRAPPER_CLASS: Record<PanelSide, string> = {
   bottom: 'relative mx-0 mb-0',
@@ -19,10 +19,22 @@ const WRAPPER_CLOSED_CLASS: Record<PanelSide, string> = {
   right: '-right-[36rem]',
 }
 
-const TRIGGER_CLASS: Record<PanelSide, string> = {
-  bottom: '-top-[5.8rem] left-1/2 -rotate-90',
-  left: 'top-[5.4rem] -right-[5.8rem] rotate-0',
-  right: 'top-[5.4rem] -left-[5.8rem] rotate-180',
+const TRIGGER_POSITION_CLASS: Record<PanelSide, string> = {
+  bottom: '-top-[5.8rem] left-1/2',
+  left: 'top-[5.4rem] -right-[5.8rem]',
+  right: 'top-[5.4rem] -left-[5.8rem]',
+}
+
+const TRIGGER_ROTATE_CLASS: Record<PanelSide, string> = {
+  bottom: '-rotate-90',
+  left: 'rotate-0',
+  right: 'rotate-180',
+}
+
+const TRIGGER_ROTATE_OPEN_CLASS: Record<PanelSide, string> = {
+  bottom: 'rotate-90',
+  left: 'rotate-180',
+  right: 'rotate-0',
 }
 
 const PANEL_CLASS: Record<PanelSide, string> = {
@@ -63,7 +75,11 @@ export function Panel({
         color='icon'
         iconPosition='only'
         leftIcon={<TriggerIcon className='h-[5.8rem] w-[3.8rem]' />}
-        className={cn('absolute', TRIGGER_CLASS[side])}
+        className={cn(
+          'absolute transition-transform duration-300',
+          TRIGGER_POSITION_CLASS[side],
+          isOpen ? TRIGGER_ROTATE_OPEN_CLASS[side] : TRIGGER_ROTATE_CLASS[side]
+        )}
         aria-label={`${SIDE_LABEL[side]} 패널 ${isOpen ? '닫기' : '열기'}`}
         aria-expanded={isOpen}
         onClick={() => setIsOpen(!isOpen)}

@@ -20,7 +20,7 @@ export function BuilderHamburgerMenu() {
   const { mutate: logout, isPending } = useLogout()
   const { isOpen, close, toggle, ref } = useDropdown<HTMLDivElement>()
   return (
-    <div className='relative' ref={ref}>
+    <div className='relative z-20' ref={ref}>
       <Button
         color='icon'
         iconPosition='only'

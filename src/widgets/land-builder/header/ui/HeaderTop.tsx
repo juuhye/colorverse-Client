@@ -15,7 +15,7 @@ export function HeaderTop() {
       </div>
 
       {/* BuilderMenu - Dropdown menu */}
-      <div className='absolute left-1/2 -translate-x-1/2'>
+      <div className='absolute left-1/2 z-20 -translate-x-1/2'>
         <BuilderMenu />
       </div>
 

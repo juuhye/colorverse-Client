@@ -34,7 +34,7 @@ export function DropdownPanel({
   return (
     <div
       className={cn(
-        'absolute z-20 rounded-10 bg-brand-tertiary',
+        'absolute rounded-10 bg-brand-tertiary',
         OFFSETX_CLASS[offsetX],
         className
       )}
