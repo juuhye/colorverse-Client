@@ -21,7 +21,7 @@ export function CheckBox({
   })
 
   return (
-    <div className='inline-flex items-center gap-8'>
+    <label className='inline-flex cursor-pointer items-center gap-8'>
       <button
         {...props}
         type='button'
@@ -47,7 +47,9 @@ export function CheckBox({
           aria-hidden='true'
         />
       </button>
-      <span>{label}</span>
-    </div>
+      <span className='text-xs font-medium text-button-secondary-outlined'>
+        {label}
+      </span>
+    </label>
   )
 }
