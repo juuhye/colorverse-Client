@@ -16,7 +16,11 @@ export function LeftPanel() {
             </div>
           </div>
           {/* 아이템 검색 */}
-          <SearchBar size='lg' placeholder='원하시는 아이템을 찾아보세요' />
+          <SearchBar
+            size='lg'
+            aria-label='아이템 검색'
+            placeholder='원하시는 아이템을 찾아보세요'
+          />
         </div>
         {/* 아이템 리스트 */}
         {/* TODO: 아이템 리스트 추가예정 */}

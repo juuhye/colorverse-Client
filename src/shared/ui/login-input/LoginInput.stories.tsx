@@ -12,11 +12,14 @@ export default meta
 type Story = StoryObj<typeof LoginInput>
 
 export const Default: Story = {
-  args: {},
+  args: {
+    'aria-label': '아이디',
+  },
 }
 
 export const WithIcon: Story = {
   args: {
+    'aria-label': '아이디',
     icon: <IdIcon />,
   },
 }

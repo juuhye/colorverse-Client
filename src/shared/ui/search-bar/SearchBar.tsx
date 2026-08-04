@@ -35,6 +35,7 @@ export const SearchBar = ({
       />
       {size === 'lg' ? (
         <Button
+          aria-label='검색'
           color='gradientPrimary'
           iconPosition='only'
           shape='circle'
@@ -44,6 +45,7 @@ export const SearchBar = ({
         />
       ) : (
         <Button
+          aria-label='검색'
           color='icon'
           iconPosition='only'
           shape='circle'

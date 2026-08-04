@@ -23,17 +23,13 @@ export const inputVariants = cva(
   }
 )
 
-export const Input = ({ state, ...props }: InputProps) => {
+export const Input = ({ state, className, ...props }: InputProps) => {
   return (
     <input
-      role='searchbox'
+      {...props}
+      role='textbox'
       aria-invalid={state === 'error'}
-      className={cn(
-        inputVariants({
-          state,
-        })
-      )}
-      type='text'
-      {...props}></input>
+      className={cn(inputVariants({ state }), className)}
+      type='text'></input>
   )
 }

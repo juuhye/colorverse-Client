@@ -19,7 +19,7 @@ export const LoginInput = ({
         {...props}
       />
       {icon && (
-        <span className='absolute top-1/2 left-lg -translate-y-1/2'>
+        <span className='pointer-events-none absolute top-1/2 left-lg -translate-y-1/2'>
           {icon}
         </span>
       )}
