@@ -1,39 +1,59 @@
 import { cva } from 'class-variance-authority'
 import { cn } from '@/shared/lib/utils/cn'
 import { SearchBarProps } from './type'
+import SearchIcon from '../../assets/search-icon.svg?react'
+import { Button } from '../button'
 
-export const searchBarVariants = cva(
-  'w-full rounded-4 border bg-white p-10 text-2xs font-medium outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2',
+export const SearchBarVariants = cva(
+  'w-full border border-search-outlined bg-search-filled pr-[5rem] font-medium text-[#716F87] outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2',
   {
     variants: {
-      state: {
-        default: [
-          'border-basic-gray-20 text-button-secondary-filled',
-          'hover:border-brand-primary hover:bg-icon-primary-filled-pressed hover:text-brand-primary',
-        ],
-        error:
-          'border-new-point-color-02 text-new-point-color-02 aria-[invalid=true]:border-new-point-color-02',
-        active: 'border-button-secondary-filled text-icon-secondary-outlined',
+      size: {
+        lg: 'rounded-8 rounded-tr-[2rem] p-xs text-xs placeholder:text-[rgba(0,0,0,0.2)]',
+        md: 'rounded-10 p-2xs pr-2xl text-[1.1rem]',
       },
     },
 
     defaultVariants: {
-      state: 'default',
+      size: 'md',
     },
   }
 )
 
-export const SearchBar = ({ state, ...props }: SearchBarProps) => {
+export const SearchBar = ({
+  size,
+  className,
+  type = 'text',
+  ...props
+}: SearchBarProps) => {
   return (
-    <input
-      role='searchbox'
-      aria-invalid={state === 'error'}
-      className={cn(
-        searchBarVariants({
-          state,
-        })
+    <div className='relative'>
+      <input
+        className={cn(SearchBarVariants({ size }), className)}
+        type={type}
+        {...props}
+      />
+      {size === 'lg' ? (
+        <Button
+          color='gradientPrimary'
+          iconPosition='only'
+          shape='circle'
+          size='sm'
+          leftIcon={<SearchIcon className='size-16' />}
+          className='absolute top-1/2 right-6 -translate-y-1/2'
+        />
+      ) : (
+        <Button
+          color='icon'
+          iconPosition='only'
+          shape='circle'
+          size='sm'
+          leftIcon={
+            <SearchIcon className='size-20 text-icon-secondary-filled' />
+          }
+          className='absolute top-1/2 right-8 -translate-y-1/2 p-0'
+        />
       )}
-      type='text'
-      {...props}></input>
+    </div>
   )
 }

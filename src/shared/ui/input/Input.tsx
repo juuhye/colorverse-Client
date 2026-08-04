@@ -1,28 +1,39 @@
+import { cva } from 'class-variance-authority'
 import { cn } from '@/shared/lib/utils/cn'
 import { InputProps } from './type'
 
-export const Input = ({
-  icon,
-  className,
-  type = 'text',
-  ...props
-}: InputProps) => {
+export const inputVariants = cva(
+  'w-full rounded-4 border bg-white p-10 text-2xs font-medium outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2',
+  {
+    variants: {
+      state: {
+        default: [
+          'border-basic-gray-20 text-button-secondary-filled',
+          'hover:border-brand-primary hover:bg-icon-primary-filled-pressed hover:text-brand-primary',
+        ],
+        error:
+          'border-new-point-color-02 text-new-point-color-02 aria-[invalid=true]:border-new-point-color-02',
+        active: 'border-button-secondary-filled text-icon-secondary-outlined',
+      },
+    },
+
+    defaultVariants: {
+      state: 'default',
+    },
+  }
+)
+
+export const Input = ({ state, ...props }: InputProps) => {
   return (
-    <div className='relative w-full'>
-      <input
-        className={cn(
-          'w-full rounded-full border border-gray-200 p-lg py-xs text-sm font-medium text-gray-900 placeholder:text-gray-200 focus:ring focus:ring-brand-primary focus:ring-offset-2',
-          icon && 'pl-[5.4rem]',
-          className
-        )}
-        type={type}
-        {...props}
-      />
-      {icon && (
-        <span className='absolute top-1/2 left-lg -translate-y-1/2'>
-          {icon}
-        </span>
+    <input
+      role='searchbox'
+      aria-invalid={state === 'error'}
+      className={cn(
+        inputVariants({
+          state,
+        })
       )}
-    </div>
+      type='text'
+      {...props}></input>
   )
 }

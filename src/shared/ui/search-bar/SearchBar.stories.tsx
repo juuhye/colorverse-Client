@@ -6,9 +6,9 @@ const meta: Meta<typeof SearchBar> = {
   component: SearchBar,
   tags: ['autodocs'],
   argTypes: {
-    state: {
+    size: {
       control: 'select',
-      options: ['default', 'error', 'active'],
+      options: ['md', 'lg'],
     },
   },
 }
@@ -16,11 +16,11 @@ const meta: Meta<typeof SearchBar> = {
 export default meta
 type Story = StoryObj<typeof SearchBar>
 
-const STATES = ['default', 'error', 'active'] as const
+const SIZES = ['md', 'lg'] as const
 
 export const Default: Story = {
   args: {
-    state: 'default',
+    size: 'md',
     placeholder: '검색어를 입력하세요',
   },
 }
@@ -28,26 +28,12 @@ export const Default: Story = {
 export const Overview: Story = {
   render: () => (
     <div className='flex flex-col gap-4'>
-      {STATES.map((state) => (
-        <div key={state} className='flex items-center gap-4'>
-          <span className='w-12 shrink-0 text-xs text-gray-400'>{state}</span>
-          <SearchBar state={state} placeholder='검색어를 입력하세요' />
+      {SIZES.map((size) => (
+        <div key={size} className='flex items-center gap-4'>
+          <span className='w-12 shrink-0 text-xs text-gray-400'>{size}</span>
+          <SearchBar size={size} placeholder='검색어를 입력하세요' />
         </div>
       ))}
     </div>
   ),
-}
-
-export const Error: Story = {
-  args: {
-    state: 'error',
-    placeholder: '검색어를 입력하세요',
-  },
-}
-
-export const Active: Story = {
-  args: {
-    state: 'active',
-    placeholder: '검색어를 입력하세요',
-  },
 }

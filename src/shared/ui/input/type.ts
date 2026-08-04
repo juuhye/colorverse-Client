@@ -1,5 +1,8 @@
 import type React from 'react'
+import type { VariantProps } from 'class-variance-authority'
+import type { inputVariants } from './Input'
 
-export type InputProps = React.ComponentProps<'input'> & {
-  icon?: React.ReactNode
-}
+type InputProps = React.ComponentProps<'input'> &
+  VariantProps<typeof inputVariants>
+
+export type { InputProps }
