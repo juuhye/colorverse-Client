@@ -5,7 +5,7 @@ import { cn } from '@/shared/lib/utils/cn'
 import { useRouter } from 'next/navigation'
 import { useLogin } from '@/entities/auth'
 import { Button } from '@/shared/ui/button'
-import { Input } from '@/shared/ui/input/Input'
+import { LoginInput } from '@/shared/ui/login-input'
 import IdIcon from '@/shared/assets/id-icon.svg'
 import PwIcon from '@/shared/assets/pw-icon.svg'
 
@@ -29,14 +29,14 @@ export function LoginFormCard() {
         )}>
         {/* ID, PW 입력란 */}
         <div className='relative flex w-full flex-col gap-10'>
-          <Input
+          <LoginInput
             aria-label='아이디'
             placeholder='아이디를 입력해 주세요'
             icon={<IdIcon className='h-18 w-xs' />}
             value={id}
             onChange={(e) => setId(e.target.value)}
           />
-          <Input
+          <LoginInput
             type='password'
             aria-label='비밀번호'
             placeholder='비밀번호를 입력해 주세요'

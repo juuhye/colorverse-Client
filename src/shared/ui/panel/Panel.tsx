@@ -32,9 +32,9 @@ const TRIGGER_ROTATE_CLASS: Record<PanelSide, string> = {
 }
 
 const TRIGGER_ROTATE_OPEN_CLASS: Record<PanelSide, string> = {
-  bottom: 'rotate-90',
-  left: 'rotate-180',
-  right: 'rotate-0',
+  bottom: 'rotate-90 opacity-60',
+  left: 'rotate-180 opacity-60',
+  right: 'rotate-0 opacity-60',
 }
 
 const PANEL_CLASS: Record<PanelSide, string> = {
@@ -59,7 +59,7 @@ export function Panel({
 }: PanelProps) {
   const [isOpen, setIsOpen] = useControllableState({
     prop: open,
-    defaultProp: defaultOpen ?? true,
+    defaultProp: defaultOpen ?? false,
     onChange: onOpenChange,
   })
 
@@ -76,7 +76,7 @@ export function Panel({
         iconPosition='only'
         leftIcon={<TriggerIcon className='h-[5.8rem] w-[3.8rem]' />}
         className={cn(
-          'absolute transition-transform duration-300',
+          'absolute p-0 transition-transform duration-300',
           TRIGGER_POSITION_CLASS[side],
           isOpen ? TRIGGER_ROTATE_OPEN_CLASS[side] : TRIGGER_ROTATE_CLASS[side]
         )}

@@ -2,7 +2,7 @@
 import { cn } from '@/shared/lib/utils/cn'
 import { useState } from 'react'
 
-const BUILDER_TABS = ['아이템 에디터', '아이템 매니저', '아이템 크리에이터']
+const BUILDER_TABS = ['배치모드', '공사모드']
 
 export function BuilderTab() {
   const [activeTab, setActiveTab] = useState<string>(BUILDER_TABS[0])

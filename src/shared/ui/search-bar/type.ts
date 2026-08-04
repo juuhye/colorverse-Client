@@ -1,8 +1,8 @@
 import type React from 'react'
 import type { VariantProps } from 'class-variance-authority'
-import type { searchBarVariants } from './SearchBar'
+import type { SearchBarVariants } from './SearchBar'
 
-type SearchBarProps = React.ComponentProps<'input'> &
-  VariantProps<typeof searchBarVariants>
+type SearchBarProps = Omit<React.ComponentProps<'input'>, 'size'> &
+  VariantProps<typeof SearchBarVariants>
 
 export type { SearchBarProps }

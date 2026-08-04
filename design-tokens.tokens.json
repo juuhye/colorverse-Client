@@ -659,6 +659,18 @@
       "type": "color",
       "value": "#0aaec5ff",
       "blendMode": "normal"
+    },
+    "search-filled": {
+      "description": "",
+      "type": "color",
+      "value": "#E8EFFEff",
+      "blendMode": "normal"
+    },
+    "search-outlined": {
+      "description": "",
+      "type": "color",
+      "value": "#E2EBFFff",
+      "blendMode": "normal"
     }
   }
 }

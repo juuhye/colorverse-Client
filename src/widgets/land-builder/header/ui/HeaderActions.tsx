@@ -9,15 +9,13 @@ export function HeaderActions() {
       <Button
         shape='circle'
         iconPosition='right'
-        rightIcon={<SquareIcon className='size-[1.9rem]' />}
-        className='text-xs font-semibold'>
+        rightIcon={<SquareIcon className='size-[1.9rem]' />}>
         저장
       </Button>
       <Button
         shape='circle'
         iconPosition='right'
-        rightIcon={<ExportIcon className='size-[1.5rem]' />}
-        className='text-xs font-semibold'>
+        rightIcon={<ExportIcon className='size-[1.5rem]' />}>
         게시
       </Button>
       <Button
