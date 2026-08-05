@@ -5,6 +5,7 @@ import { TreeGroup } from './TreeGrop'
 import { TreeItem } from './TreeItem'
 import { TreeIndent } from './TreeIndent'
 import { TreeActions } from './TreeActions'
+import { useTreeStore } from '@/features/land-builder/panel/model/useTreeStore'
 
 const meta: Meta<typeof TreeList> = {
   title: 'Shared/Tree/TreeList',
@@ -107,4 +108,65 @@ export const Overview: Story = {
       </TreeList>
     </div>
   ),
+}
+
+const interactiveTreeData = [
+  {
+    id: 'sky',
+    label: 'Sky Item Instance',
+    children: [
+      { id: 'sky-1', label: 'Sky Sub Item 1' },
+      { id: 'sky-2', label: 'Sky Sub Item 2' },
+    ],
+  },
+  {
+    id: 'nature',
+    label: 'Nature Item Instance',
+    children: [{ id: 'nature-1', label: 'Nature Sub Item' }],
+  },
+]
+
+export const Interactive: Story = {
+  render: () => {
+    const expandedIds = useTreeStore((state) => state.expandedIds)
+    const toggleExpanded = useTreeStore((state) => state.toggleExpanded)
+
+    return (
+      <div className='w-[30rem]'>
+        <TreeList>
+          <TreeHeader label='랜드 아이템' open />
+          <TreeGroup>
+            {interactiveTreeData.map((parent) => {
+              const expanded = expandedIds.has(parent.id)
+              return (
+                <div key={parent.id}>
+                  <TreeItem>
+                    <TreeIndent
+                      depth={0}
+                      hasChildren
+                      expanded={expanded}
+                      aria-label={parent.label}
+                      onClick={() => toggleExpanded(parent.id)}
+                    />
+                    <ItemIconPlaceholder />
+                    <span className='flex-1'>{parent.label}</span>
+                    <TreeActions visible locked />
+                  </TreeItem>
+                  {expanded &&
+                    parent.children.map((child) => (
+                      <TreeItem key={child.id}>
+                        <TreeIndent depth={1} hasChildren={false} />
+                        <ItemIconPlaceholder />
+                        <span className='flex-1'>{child.label}</span>
+                        <TreeActions visible locked />
+                      </TreeItem>
+                    ))}
+                </div>
+              )
+            })}
+          </TreeGroup>
+        </TreeList>
+      </div>
+    )
+  },
 }
