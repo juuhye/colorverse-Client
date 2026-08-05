@@ -671,6 +671,12 @@
       "type": "color",
       "value": "#E2EBFFff",
       "blendMode": "normal"
+    },
+    "stroke-border-gray": {
+      "description": "",
+      "type": "color",
+      "value": "#F2F5F8ff",
+      "blendMode": "normal"
     }
   }
 }
