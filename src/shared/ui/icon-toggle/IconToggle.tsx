@@ -113,7 +113,9 @@ export const IconToggle = ({
     onChange: onPressedChange,
   })
 
-  const isPressed = group ? value !== undefined && group.value.includes(value) : isOn
+  const isPressed = group
+    ? value !== undefined && group.value.includes(value)
+    : isOn
 
   return (
     <button

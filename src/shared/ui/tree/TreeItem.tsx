@@ -13,7 +13,7 @@ export function TreeItem({
         'flex items-center gap-8 rounded-8 p-5 text-xs font-medium',
         selected
           ? 'border border-brand-primary bg-white text-brand-primary'
-          : 'text-icon-primary-outlined hover:bg-white',
+          : 'hover:bg-white',
         className
       )}
       {...props}>

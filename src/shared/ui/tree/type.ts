@@ -25,6 +25,9 @@ type TreeActionsProps = {
   visible?: boolean
   locked?: boolean
   selected?: boolean
+  onVisibleChange?: (visible: boolean) => void
+  onLockedChange?: (locked: boolean) => void
+  onSelectedChange?: (selected: boolean) => void
 }
 
 export type {

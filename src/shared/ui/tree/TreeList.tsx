@@ -5,7 +5,7 @@ export function TreeList({ className, children, ...props }: TreeListProps) {
   return (
     <div
       className={cn(
-        'flex flex-col overflow-hidden rounded-16 bg-background-tertiary',
+        'flex flex-col overflow-hidden rounded-8 border border-search-outlined bg-[#F5F8FB]',
         className
       )}
       {...props}>
