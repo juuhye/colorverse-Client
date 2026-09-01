@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { TreeList } from './TreeList'
 import { TreeHeader } from './TreeHeader'
@@ -130,6 +131,11 @@ export const Interactive: Story = {
   render: () => {
     const expandedIds = useTreeStore((state) => state.expandedIds)
     const toggleExpanded = useTreeStore((state) => state.toggleExpanded)
+    const [visibleIds, setVisibleIds] = useState<Record<string, boolean>>({})
+    const [lockedIds, setLockedIds] = useState<Record<string, boolean>>({})
+
+    const isVisible = (id: string) => visibleIds[id] ?? true
+    const isLocked = (id: string) => lockedIds[id] ?? true
 
     return (
       <div className='w-[30rem]'>
@@ -150,7 +156,16 @@ export const Interactive: Story = {
                     />
                     <ItemIconPlaceholder />
                     <span className='flex-1'>{parent.label}</span>
-                    <TreeActions visible locked />
+                    <TreeActions
+                      visible={isVisible(parent.id)}
+                      locked={isLocked(parent.id)}
+                      onVisibleChange={(visible) =>
+                        setVisibleIds((prev) => ({ ...prev, [parent.id]: visible }))
+                      }
+                      onLockedChange={(locked) =>
+                        setLockedIds((prev) => ({ ...prev, [parent.id]: locked }))
+                      }
+                    />
                   </TreeItem>
                   {expanded &&
                     parent.children.map((child) => (
@@ -158,7 +173,16 @@ export const Interactive: Story = {
                         <TreeIndent depth={1} hasChildren={false} />
                         <ItemIconPlaceholder />
                         <span className='flex-1'>{child.label}</span>
-                        <TreeActions visible locked />
+                        <TreeActions
+                          visible={isVisible(child.id)}
+                          locked={isLocked(child.id)}
+                          onVisibleChange={(visible) =>
+                            setVisibleIds((prev) => ({ ...prev, [child.id]: visible }))
+                          }
+                          onLockedChange={(locked) =>
+                            setLockedIds((prev) => ({ ...prev, [child.id]: locked }))
+                          }
+                        />
                       </TreeItem>
                     ))}
                 </div>

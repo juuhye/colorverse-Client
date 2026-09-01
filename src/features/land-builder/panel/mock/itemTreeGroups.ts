@@ -53,7 +53,7 @@ export const itemTreeGroups: LandTreeGroup[] = [
         selected: true,
         children: [
           {
-            id: 'building',
+            id: 'base-parts-building',
             label: 'Building Item Instance',
             visible: false,
             locked: true,
