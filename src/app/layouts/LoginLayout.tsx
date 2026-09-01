@@ -4,8 +4,8 @@ import LoginBg from '@/pages/login/assets/login-bg.jpg'
 import LoginItem from '@/pages/login/assets/login-item.png'
 
 export const metadata: Metadata = {
-  title: 'colorverse',
-  description: 'colorverse: Web Builder',
+  title: 'colorverse | LOGIN',
+  description: 'colorverse에 로그인하고 나만의 웹을 만들어보세요',
 }
 
 export default function LoginLayout({

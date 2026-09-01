@@ -1,1 +1,1 @@
-export { default } from '@/app/layouts/LoginLayout'
+export { default, metadata } from '@/app/layouts/LoginLayout'
