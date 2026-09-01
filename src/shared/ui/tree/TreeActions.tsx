@@ -19,7 +19,9 @@ export function TreeActions({
   className,
 }: TreeActionsProps) {
   return (
-    <div className={cn('flex items-center gap-4', className)}>
+    <div
+      className={cn('flex items-center gap-4', className)}
+      onClick={(e) => e.stopPropagation()}>
       <IconToggle
         aria-label={visible ? '숨기기' : '보이기'}
         size='xs'

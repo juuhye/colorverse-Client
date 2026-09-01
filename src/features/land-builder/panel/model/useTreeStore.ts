@@ -13,4 +13,16 @@ export const useTreeStore = create<TreeState>((set) => ({
       }
       return { expandedIds }
     }),
+  visibleOverrides: {},
+  lockedOverrides: {},
+  setVisible: (id, visible) =>
+    set((state) => ({
+      visibleOverrides: { ...state.visibleOverrides, [id]: visible },
+    })),
+  setLocked: (id, locked) =>
+    set((state) => ({
+      lockedOverrides: { ...state.lockedOverrides, [id]: locked },
+    })),
+  selectedId: null,
+  selectItem: (id) => set({ selectedId: id }),
 }))
