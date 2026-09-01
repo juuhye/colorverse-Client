@@ -3,7 +3,7 @@ import {
   BuilderTab,
   CanvasToolbar,
   BuilderSwitch,
-} from '@/features/land-builder'
+} from '@/features/land-builder/header'
 import { HeaderActions } from './HeaderActions'
 import { Button } from '@/shared/ui/button'
 import PlayIcon from '@/shared/assets/play-icon.svg'

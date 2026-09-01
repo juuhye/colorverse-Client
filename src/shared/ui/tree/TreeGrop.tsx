@@ -3,9 +3,7 @@ import { TreeGroupProps } from './type'
 
 export function TreeGroup({ className, children, ...props }: TreeGroupProps) {
   return (
-    <div
-      className={cn('flex flex-col gap-2 px-2xs py-xs', className)}
-      {...props}>
+    <div className={cn('flex flex-col gap-4 px-7', className)} {...props}>
       {children}
     </div>
   )

@@ -14,15 +14,18 @@ export function TreeIndent({
     <span
       className='flex shrink-0 items-center'
       style={{ paddingLeft: `${depth * 3.2}rem` }}>
-      {hasChildren ? (
+      {hasChildren && (
         <button
           type='button'
           aria-expanded={expanded}
+          aria-label={expanded ? '접기' : '펼치기'}
           className={cn(
-            'flex shrink-0 items-center justify-center rounded-full',
+            'flex shrink-0 rotate-180 items-center justify-center rounded-full',
             selected && expanded
-              ? 'border-0 bg-brand-primary text-white'
-              : 'text-icon-tertiary-outlined',
+              ? depth === 0
+                ? 'border-0 bg-brand-primary text-white'
+                : 'border border-brand-primary text-brand-primary'
+              : 'text-icon-primary-outlined',
             className
           )}
           {...props}>
@@ -35,8 +38,6 @@ export function TreeIndent({
             <MenuArrowIcon className='h-5 w-8' />
           </span>
         </button>
-      ) : (
-        <span className='size-20 shrink-0' aria-hidden='true' />
       )}
     </span>
   )

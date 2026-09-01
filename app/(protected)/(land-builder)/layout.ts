@@ -1,1 +1,1 @@
-export { LandBuilderLayout as default } from '@/app/layouts/LandBuilderLayout'
+export { default, metadata } from '@/app/layouts/LandBuilderLayout'

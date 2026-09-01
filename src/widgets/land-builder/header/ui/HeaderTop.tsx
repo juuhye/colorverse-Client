@@ -1,5 +1,5 @@
 import { Logo } from '@/shared/ui/logo'
-import { BuilderMenu } from '@/features/land-builder'
+import { BuilderMenu } from '@/features/land-builder/header'
 import { HeaderUtils } from './HeaderUtils'
 import { HeaderProfile } from './HeaderProfile'
 

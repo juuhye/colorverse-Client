@@ -1,8 +1,18 @@
+import { Metadata } from 'next'
 import Image from 'next/image'
 import { HeaderBottom, HeaderTop } from '@/widgets/land-builder/header'
 import CanvasMockImg from '@/shared/assets/canvasMock-img.jpg'
 
-export function LandBuilderLayout({ children }: { children: React.ReactNode }) {
+export const metadata: Metadata = {
+  title: 'colorverse',
+  description: 'colorverse: Web Builder',
+}
+
+export default function LandBuilderLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <div className='flex h-screen w-screen flex-col bg-background-secondary-builder'>
       <header>
