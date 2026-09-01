@@ -1,11 +1,12 @@
 import { Panel } from '@/shared/ui/panel'
 import { CheckBox } from '@/shared/ui/check-box'
 import { SearchBar } from '@/shared/ui/search-bar'
+import { ItemTreeList } from '@/features/land-builder/panel'
 
 export function LeftPanel() {
   return (
     <Panel side='left' defaultOpen={true}>
-      <div className='flex flex-col gap-10 p-sm px-xs pb-56'>
+      <div className='flex h-full flex-col gap-10 p-sm px-xs pb-56'>
         <div className='flex flex-col gap-sm'>
           {/* 상단 제목 + CheckBox */}
           <div className='flex items-center justify-between'>
@@ -23,7 +24,9 @@ export function LeftPanel() {
           />
         </div>
         {/* 아이템 리스트 */}
-        {/* TODO: 아이템 리스트 추가예정 */}
+        <div className='min-h-0 flex-1'>
+          <ItemTreeList />
+        </div>
       </div>
     </Panel>
   )
